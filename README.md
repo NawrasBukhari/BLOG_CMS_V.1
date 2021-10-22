@@ -8,9 +8,9 @@
 </p>
 
 ## About My Project
-This is the beta version of my blog!
-Any contributions made to this project are appreciated!
-With love Nawras Bukhari
+### This is the beta version of my blog!
+### Any contributions made to this project are appreciated!
+### With love Nawras Bukhari
 
 ## About Laravel
 
