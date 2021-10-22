@@ -13,10 +13,10 @@
 ### With love Nawras Bukhari
 
 ## How to implement
-1- You have to change the root directory for "projectname/public".
-2- Open database folder and import manually the SQL file into your database.
-3- Change the credentials of .env file for your credentials.
-4- you are in!
+### 1- You have to change the root directory for "projectname/public".
+### 2- Open database folder and import manually the SQL file into your database.
+### 3- Change the credentials of .env file for your credentials.
+### 4- you are in!
 
 ## About Laravel
 
