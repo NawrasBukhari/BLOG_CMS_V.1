@@ -7,17 +7,6 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About My Project
-### This is the beta version of my blog!
-### Any contributions made to this project are appreciated!
-### With love Nawras Bukhari
-
-## How to implement
-### 1- You have to change the root directory for "projectname/public".
-### 2- Open database folder and import manually the SQL file into your database.
-### 3- Change the credentials of .env file for your credentials.
-### 4- you are in!
-
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

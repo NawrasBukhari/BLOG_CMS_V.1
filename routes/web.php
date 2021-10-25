@@ -1,8 +1,7 @@
 <?php
 
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TodoController;
-use App\Http\Controllers\SettingsController;
 
 
 /*
@@ -16,26 +15,16 @@ use App\Http\Controllers\SettingsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::get('todo', [TodoController::class, 'index'
-]);
-
-Auth::routes();
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::resource('/', SettingsController::class);
+Route::get('/', [FrontendController::class, 'index']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+require_once __DIR__ . '/livewire.php';
+require_once __DIR__ . '/fortify.php';
 
