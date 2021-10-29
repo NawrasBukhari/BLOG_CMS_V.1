@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
    <head>
-   @foreach ($frontend as $setting)
+   @foreach ($tasks as $setting)
       <!-- basic -->
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,7 +29,7 @@
       <link rel="stylesheet" href="{{asset('css/jquery.mCustomScrollbar.min.css')}}">
       <!-- Tweaks for older IEs-->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" >
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
       integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
       crossorigin="anonymous">
@@ -51,7 +51,7 @@
 
       <!-- banner -->
       <section class="banner_main">
-         <div class="container">
+         <div  class="container">
             <div class="row d_flex">
                <div class="col-md-5">
                   <div class="text-bg">
@@ -71,7 +71,7 @@
       </section>
       <!-- end banner -->
       <!-- Hosting -->
-      <div id="" class="hosting">
+      <div id="hosting" class="hosting">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
@@ -192,26 +192,35 @@
       </div>
       <!-- end why -->
       <!-- contact -->
+      @if(Session::has('success'))
+      <div class="alert alert-success">
+          {{Session::get('success')}}
+      </div>
+      @endif
+
       <div id="contact" class="contact">
          <div class="container">
             <div class="row">
                <div class="col-md-6 offset-md-3 ">
-                  <form class="main_form">
+                  <form class="main_form" action=" {{ route('contact.store') }} "  method="post">
                      <div class="row">
                         <div class="col-sm-12">
-                           <input class="contactus" placeholder="Name" type="text" name="Name">
-                        </div>
-                        <div class="col-sm-12">
-                           <input class="contactus" placeholder="Email" type="text" name=" Email">
-                        </div>
-                        <div class="col-sm-12">
-                           <input class="contactus" placeholder="Phone" type="text" name="Phone">
-                        </div>
-                        <div class="col-sm-12">
-                           <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
-                        </div>
-                        <div class="col-sm-12">
-                           <button class="send">Send</button>
+                        @csrf
+                            <div class="col-sm-12">
+                                <input class="contactus" placeholder="Name" type="text" name="Name" required>
+                            </div>
+                            <div class="col-sm-12">
+                            <input class="contactus" placeholder="Email" type="email" name=" Email" required>
+                            </div>
+                            <div class="col-sm-12">
+                            <input class="contactus" placeholder="Subject" type="text" name="Phone" required>
+                            </div>
+                            <div class="col-sm-12">
+                            <textarea class="textarea" placeholder="Message" type="text" name="Message" required></textarea>
+                            </div>
+                            <div class="col-sm-12">
+                            <Button type="submit" name="send" value="Submit" class="send">Submit</Button>
+                            </div>
                         </div>
                      </div>
                   </form>

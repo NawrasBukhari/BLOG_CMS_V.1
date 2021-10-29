@@ -72,7 +72,7 @@ class CreateFrontendTable extends Migration
             $table->string('section_5_subtitle');
             $table->text('section_5_paragraph');
 
-            $table->string('facebook_link');
+            $table->string('instagram_link');
             $table->string('whatsapp_link');
             $table->string('telegram_link');
             $table->string('github_link');

@@ -2,6 +2,11 @@
 
 use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminCrudController;
+use App\Http\Controllers\ContactUsFormController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\TasksController;
+
 
 
 /*
@@ -15,11 +20,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [FrontendController::class, 'index']);
+Route::get('/', [FrontendController::class, 'index'])->name = ('index');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('/tasks', TasksController::class);
+
+    Route::resource('/users', UsersController::class);
+
+    Route::resource('/AdminCrud', AdminCrudController::class);
+});
+
+Route::get('/index', [ContactUsFormController::class, 'createForm']);
+
+Route::post('/index', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
+
+
+
 
 
 

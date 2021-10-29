@@ -16,6 +16,28 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ url('/') }}" target="_blank" :active="request()->routeIs('/')">
+                        {{ __('Jump to frontend') }}
+                    </x-jet-nav-link>
+                </div>
+                @can('task_access')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('tasks.index') }}"  :active="request()->routeIs('tasks.*')">
+                        {{ __('Frontend CRUD') }}
+                    </x-jet-nav-link>
+                @endcan
+
+
+                @can('user_access')
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.*')">
+                            {{ __('Users') }}
+                        </x-jet-nav-link>
+                    </div>
+                @endcan
+                </div>
+
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

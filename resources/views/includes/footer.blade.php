@@ -12,28 +12,28 @@
                         <div class="basr-social-share social">
                             <ul class="">
                               <li>
-                                <a class="facebook" href=" {{ $setting->instagram_link }} ">
+                                <a target=”_blank” class="facebook" href=" {{ $setting->instagram_link }} ">
                                   <i class="fab fa-instagram"></i>
                                       <span>Instagram</span>
                                   </a>
                               </li>
 
                               <li>
-                                <a class="twitter" href=" {{ $setting->whatsapp_link }} ">
+                                <a target=”_blank” class="twitter" href=" {{ $setting->whatsapp_link }} ">
                                   <i class="fab fa-whatsapp"></i>
                                       <span>Whatsapp</span>
                                 </a>
                               </li>
 
                               <li>
-                                  <a class="googleplus" href="{{ $setting->telegram_link }}">
+                                  <a target=”_blank” class="googleplus" href="{{ $setting->telegram_link }}">
                                   <i class="fab fa-telegram"></i>
                                   <span>Telegram</span>
                                   </a>
                               </li>
 
                               <li>
-                                <a class="linkedin" href=" {{ $setting->github_link }} ">
+                                <a target=”_blank” class="linkedin" href=" {{ $setting->github_link }} ">
                                   <i class="fab fa-github"></i>
                                   <span>Github</span>
                                   </a>
@@ -50,7 +50,7 @@
               <div class="container">
                  <div class="row">
                     <div class="col-md-12">
-                       <p>{{ $setting-> footer_text}}</p>
+                       <p style="font-size: 20px; color: #0c0f38;">{{ $setting-> footer_text}}</p>
                     </div>
                  </div>
               </div>

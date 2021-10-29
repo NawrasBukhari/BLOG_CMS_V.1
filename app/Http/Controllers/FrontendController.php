@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\Frontend;
+use App\Models\Task;
 
 class FrontendController extends Controller
 {
@@ -10,7 +10,7 @@ class FrontendController extends Controller
     public function index()
     {
 
-        $frontend = Frontend::all();
-        return view('home', compact('frontend'));
+        $tasks = Task::all();
+        return view('home', compact('tasks'));
     }
 }

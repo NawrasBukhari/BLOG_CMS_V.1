@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Frontend extends Model
 {
     use HasFactory;
-    protected $table = 'frontend';
+    protected $table = 'tasks';
 
 }
