@@ -25,7 +25,7 @@ class TasksController extends Controller
 
     public function create()
     {
-        abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('tasks.create');
     }
@@ -46,7 +46,7 @@ class TasksController extends Controller
 
     public function edit(Task $task)
     {
-        abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('tasks.edit', compact('task'));
     }
@@ -61,7 +61,7 @@ class TasksController extends Controller
 
     public function destroy(Task $task)
     {
-        abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $task->delete();
 

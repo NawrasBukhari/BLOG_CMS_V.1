@@ -17,9 +17,13 @@ class StoreUserRequest extends FormRequest
             'email'    => [
                 'required',
                 'unique:users',
+                'email',
+                'between:3,64'
+
             ],
             'password' => [
                 'required',
+
             ],
             'roles.*'  => [
                 'integer',

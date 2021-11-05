@@ -2,8 +2,6 @@
 
 use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminCrudController;
-use App\Http\Controllers\ContactUsFormController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\TasksController;
 
@@ -33,12 +31,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('/users', UsersController::class);
 
-    Route::resource('/AdminCrud', AdminCrudController::class);
 });
 
-Route::get('/index', [ContactUsFormController::class, 'createForm']);
 
-Route::post('/index', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
+
+
 
 
 

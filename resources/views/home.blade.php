@@ -198,36 +198,10 @@
       </div>
       @endif
 
-      <div id="contact" class="contact">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-6 offset-md-3 ">
-                  <form class="main_form" action=" {{ route('contact.store') }} "  method="post">
-                     <div class="row">
-                        <div class="col-sm-12">
-                        @csrf
-                            <div class="col-sm-12">
-                                <input class="contactus" placeholder="Name" type="text" name="Name" required>
-                            </div>
-                            <div class="col-sm-12">
-                            <input class="contactus" placeholder="Email" type="email" name=" Email" required>
-                            </div>
-                            <div class="col-sm-12">
-                            <input class="contactus" placeholder="Subject" type="text" name="Phone" required>
-                            </div>
-                            <div class="col-sm-12">
-                            <textarea class="textarea" placeholder="Message" type="text" name="Message" required></textarea>
-                            </div>
-                            <div class="col-sm-12">
-                            <Button type="submit" name="send" value="Submit" class="send">Submit</Button>
-                            </div>
-                        </div>
-                     </div>
-                  </form>
-               </div>
-            </div>
-         </div>
-      </div>
+      {{-- Here I include the contact form here --}}
+      @include('includes.contact')
+
+      {{-- Here ends the include of contact form --}}
 
       <!-- end contact -->
       <!-- Here where we include footer -->
